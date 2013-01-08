@@ -90,7 +90,6 @@
 		E457B25B169BCD00009125A1 = {
 			isa = PBXGroup;
 			children = (
-				E457B2FB169BD801009125A1 /* QuartzCore.framework */,
 				E457B270169BCD00009125A1 /* JHPrimeNumberViewer */,
 				E457B2DF169BD5B0009125A1 /* UnitTests */,
 				E457B269169BCD00009125A1 /* Frameworks */,
@@ -110,6 +109,7 @@
 		E457B269169BCD00009125A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E457B2FB169BD801009125A1 /* QuartzCore.framework */,
 				E457B2F6169BD61A009125A1 /* GHUnitIOS.framework */,
 				E457B26A169BCD00009125A1 /* UIKit.framework */,
 				E457B26C169BCD00009125A1 /* Foundation.framework */,
