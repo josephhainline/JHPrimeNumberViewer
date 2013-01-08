@@ -10,10 +10,9 @@
 
 @interface JHPrimeNumberModel : NSObject
 
-//@property (nonatomic, strong) NSArray* primes;
-
-//- (id)initWithNumberOfPrimes:(NSInteger *)numPrimes;
-
 - (BOOL)isPrimeNumber:(int)number;
+- (NSArray *)allCalculatedPrimes;
+- (void)calculateNextPrime;
+- (int)highestKnownPrime;
 
 @end
