@@ -123,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				E457B271169BCD00009125A1 /* Supporting Files */,
+				E457B279169BCD00009125A1 /* JHAppDelegate.h */,
+				E457B27A169BCD00009125A1 /* JHAppDelegate.m */,
 				E457B2A9169BCE85009125A1 /* JHPrimeNumberModel.h */,
 				E457B2AA169BCE85009125A1 /* JHPrimeNumberModel.m */,
 			);
@@ -132,8 +134,6 @@
 		E457B271169BCD00009125A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E457B279169BCD00009125A1 /* JHAppDelegate.h */,
-				E457B27A169BCD00009125A1 /* JHAppDelegate.m */,
 				E457B272169BCD00009125A1 /* JHPrimeNumberViewer-Info.plist */,
 				E457B273169BCD00009125A1 /* InfoPlist.strings */,
 				E457B276169BCD00009125A1 /* main.m */,
@@ -451,6 +451,7 @@
 				E457B2F3169BD5B0009125A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
