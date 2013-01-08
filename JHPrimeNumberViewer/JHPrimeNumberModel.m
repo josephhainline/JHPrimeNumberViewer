@@ -63,6 +63,10 @@
     return [self.primes.lastObject intValue];
 }
 
+- (int)numberOfKnownPrimes {
+    return self.primes.count;
+}
+
 - (NSArray *)allCalculatedPrimes {
     return self.primes;
 }

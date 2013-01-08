@@ -98,9 +98,16 @@
     
     NSArray *calculatedPrimes = [testSubject allCalculatedPrimes];
     
-    NSLog(@"calculated Primes count is: %i", calculatedPrimes.count);
     GHAssertTrue(calculatedPrimes.count == 100, nil);
     GHAssertTrue([calculatedPrimes.lastObject intValue] == numberToTest, nil);
+}
+
+- (void)test3559IsThe500thPrime {
+    int numberToTest = 3559;
+    [testSubject isPrimeNumber:numberToTest];
+    
+    GHAssertTrue([testSubject numberOfKnownPrimes] == 500, nil);
+    GHAssertTrue([testSubject highestKnownPrime] == numberToTest, nil);
 }
 
 @end

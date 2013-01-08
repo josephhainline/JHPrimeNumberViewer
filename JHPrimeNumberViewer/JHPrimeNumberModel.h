@@ -14,5 +14,6 @@
 - (NSArray *)allCalculatedPrimes;
 - (void)calculateNextPrime;
 - (int)highestKnownPrime;
+- (int)numberOfKnownPrimes;
 
 @end
