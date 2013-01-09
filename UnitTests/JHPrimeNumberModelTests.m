@@ -8,6 +8,7 @@
 
 #import <GHUnitIOS/GHUnit.h>
 #import "JHPrimeNumberModel.h"
+#import "OCMock.h"
 
 @interface JHPrimeNumberModelTests : GHTestCase {
     JHPrimeNumberModel *testSubject;
@@ -108,6 +109,21 @@
     
     GHAssertTrue([testSubject numberOfKnownPrimes] == 500, nil);
     GHAssertTrue([testSubject highestKnownPrime] == numberToTest, nil);
+}
+
+- (void)testNotificationIsPostedWhenNewPrimeIsCalculated {
+    id notificationObserver = [OCMockObject observerMock];
+    [[NSNotificationCenter defaultCenter] addMockObserver:notificationObserver name:JHPrimeNumberModelNewPrimeGenerated object:testSubject];
+    [[notificationObserver expect] notificationWithName:JHPrimeNumberModelNewPrimeGenerated object:testSubject];
+    
+    [testSubject calculateNextPrime];
+    
+    [notificationObserver verify];
+}
+
+- (void)testCanBeInitializedWithNumberOfPrimesToCalculate {
+    JHPrimeNumberModel *testSubject = [[JHPrimeNumberModel alloc] initWithNumberOfPrimesToCalculate:15];
+    GHAssertTrue([testSubject numberOfKnownPrimes] == 15, nil);
 }
 
 @end

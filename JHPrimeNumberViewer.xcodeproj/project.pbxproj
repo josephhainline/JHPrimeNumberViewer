@@ -29,6 +29,9 @@
 		E457B2FA169BD74B009125A1 /* JHPrimeNumberModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E457B2F9169BD74B009125A1 /* JHPrimeNumberModelTests.m */; };
 		E457B2FC169BD801009125A1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E457B2FB169BD801009125A1 /* QuartzCore.framework */; };
 		E457B2FD169BD8CC009125A1 /* JHPrimeNumberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E457B2AA169BCE85009125A1 /* JHPrimeNumberModel.m */; };
+		E4CD0F80169D1B3600F39B98 /* JHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CD0F7F169D1B3600F39B98 /* JHMainViewController.m */; };
+		E4CD0F81169D1B3600F39B98 /* JHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CD0F7F169D1B3600F39B98 /* JHMainViewController.m */; };
+		E4CD0F95169D379400F39B98 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CD0F94169D379400F39B98 /* libOCMock.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,15 @@
 		E457B2F6169BD61A009125A1 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
 		E457B2F9169BD74B009125A1 /* JHPrimeNumberModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHPrimeNumberModelTests.m; sourceTree = "<group>"; };
 		E457B2FB169BD801009125A1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E4CD0F7E169D1B3600F39B98 /* JHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMainViewController.h; sourceTree = "<group>"; };
+		E4CD0F7F169D1B3600F39B98 /* JHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMainViewController.m; sourceTree = "<group>"; };
+		E4CD0F8E169D36B000F39B98 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		E4CD0F8F169D36B000F39B98 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		E4CD0F90169D36B000F39B98 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		E4CD0F91169D36B000F39B98 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		E4CD0F92169D36B000F39B98 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		E4CD0F93169D36B000F39B98 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		E4CD0F94169D379400F39B98 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,7 @@
 				E457B2DD169BD5B0009125A1 /* Foundation.framework in Frameworks */,
 				E457B2DE169BD5B0009125A1 /* CoreGraphics.framework in Frameworks */,
 				E457B2F7169BD61A009125A1 /* GHUnitIOS.framework in Frameworks */,
+				E4CD0F95169D379400F39B98 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +122,7 @@
 		E457B269169BCD00009125A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4CD0F94169D379400F39B98 /* libOCMock.a */,
 				E457B2FB169BD801009125A1 /* QuartzCore.framework */,
 				E457B2F6169BD61A009125A1 /* GHUnitIOS.framework */,
 				E457B26A169BCD00009125A1 /* UIKit.framework */,
@@ -127,6 +141,8 @@
 				E457B27A169BCD00009125A1 /* JHAppDelegate.m */,
 				E457B2A9169BCE85009125A1 /* JHPrimeNumberModel.h */,
 				E457B2AA169BCE85009125A1 /* JHPrimeNumberModel.m */,
+				E4CD0F7E169D1B3600F39B98 /* JHMainViewController.h */,
+				E4CD0F7F169D1B3600F39B98 /* JHMainViewController.m */,
 			);
 			path = JHPrimeNumberViewer;
 			sourceTree = "<group>";
@@ -157,6 +173,7 @@
 		E457B2E0169BD5B0009125A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E4CD0F8D169D36B000F39B98 /* OCMock */,
 				E457B2E1169BD5B0009125A1 /* UnitTests-Info.plist */,
 				E457B2E2169BD5B0009125A1 /* InfoPlist.strings */,
 				E457B2E5169BD5B0009125A1 /* main.m */,
@@ -167,6 +184,19 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		E4CD0F8D169D36B000F39B98 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				E4CD0F8E169D36B000F39B98 /* NSNotificationCenter+OCMAdditions.h */,
+				E4CD0F8F169D36B000F39B98 /* OCMArg.h */,
+				E4CD0F90169D36B000F39B98 /* OCMConstraint.h */,
+				E4CD0F91169D36B000F39B98 /* OCMock.h */,
+				E4CD0F92169D36B000F39B98 /* OCMockObject.h */,
+				E4CD0F93169D36B000F39B98 /* OCMockRecorder.h */,
+			);
+			path = OCMock;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -266,6 +296,7 @@
 				E457B277169BCD00009125A1 /* main.m in Sources */,
 				E457B27B169BCD00009125A1 /* JHAppDelegate.m in Sources */,
 				E457B2AB169BCE85009125A1 /* JHPrimeNumberModel.m in Sources */,
+				E4CD0F80169D1B3600F39B98 /* JHMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +307,7 @@
 				E457B2E6169BD5B0009125A1 /* main.m in Sources */,
 				E457B2FA169BD74B009125A1 /* JHPrimeNumberModelTests.m in Sources */,
 				E457B2FD169BD8CC009125A1 /* JHPrimeNumberModel.m in Sources */,
+				E4CD0F81169D1B3600F39B98 /* JHMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +426,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UnitTests/UnitTests-Prefix.pch";
 				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -414,6 +450,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UnitTests/UnitTests-Prefix.pch";
 				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",

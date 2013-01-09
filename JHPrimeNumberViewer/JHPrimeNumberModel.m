@@ -27,6 +27,16 @@
     return self;
 }
 
+- (id)initWithNumberOfPrimesToCalculate:(int)numPrimes {
+    self = [self init];
+    if (self) {
+        while ([self numberOfKnownPrimes] < numPrimes) {
+            [self calculateNextPrime];
+        }
+    }
+    return self;
+}
+
 - (BOOL)isPrimeNumber:(int)x {
     while (x > [self.primes.lastObject intValue]) {
         [self calculateNextPrime];
@@ -47,7 +57,11 @@
         BOOL divisibleByAnyPrime = NO;
         for (NSNumber *primeNum in self.primes) {
             int primeInt = [primeNum intValue];
+
             if (primeInt == 1) continue;
+
+            if (primeInt > sqrt(candidate)) break; //out of inner loop
+
             if (candidate % primeInt == 0) {
                 divisibleByAnyPrime = YES;
             }
@@ -57,6 +71,7 @@
             found = YES;
         }
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:JHPrimeNumberModelNewPrimeGenerated object:self];
 }
 
 - (int)highestKnownPrime {

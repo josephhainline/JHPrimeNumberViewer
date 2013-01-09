@@ -8,7 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#define JHPrimeNumberModelNewPrimeGenerated @"newPrimeGenerated"
+
 @interface JHPrimeNumberModel : NSObject
+
+- (id)init;
+- (id)initWithNumberOfPrimesToCalculate:(int)numPrimes;
 
 - (BOOL)isPrimeNumber:(int)number;
 - (NSArray *)allCalculatedPrimes;
