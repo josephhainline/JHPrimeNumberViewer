@@ -23,9 +23,9 @@
     testSubject = [[JHPrimeNumberModel alloc] init];
 }
 
-- (void)testOneIsPrime {
+- (void)testOneIsNotPrime {
     int numberToTest = 1;
-    GHAssertTrue([testSubject isPrimeNumber:numberToTest], nil);
+    GHAssertFalse([testSubject isPrimeNumber:numberToTest], nil);
 }
 
 - (void)testTwoIsPrime {
@@ -33,8 +33,13 @@
     GHAssertTrue([testSubject isPrimeNumber:numberToTest], nil);
 }
 
+- (void)testThreeIsPrime {
+    int numberToTest = 3;
+    GHAssertTrue([testSubject isPrimeNumber:numberToTest], nil);
+}
+
 - (void)testKnownPrimesAreAccessible {
-    NSArray *knownPrimes = @[@1, @2];
+    NSArray *knownPrimes = @[@2, @3];
 
     NSArray *calculatedPrimes = [testSubject allCalculatedPrimes];
 
@@ -42,8 +47,8 @@
     GHAssertEqualObjects(calculatedPrimes, knownPrimes, nil);
 }
 
-- (void)testCanCalculateThreeIsPrime {
-    NSArray *knownPrimes = @[@1, @2, @3];
+- (void)testCanCalculateFiveIsPrime {
+    NSArray *knownPrimes = @[@2, @3, @5];
     
     [testSubject calculateNextPrime];
     NSArray *calculatedPrimes = [testSubject allCalculatedPrimes];
@@ -63,12 +68,12 @@
 }
 
 - (void)testPreviouslyCalculatedPrimesAreAccessible {
-    NSArray *knownPrimes = @[@1, @2, @3, @5];
+    NSArray *knownPrimes = @[@2, @3, @5];
     [testSubject isPrimeNumber:5];
     
     NSArray *calculatedPrimes = [testSubject allCalculatedPrimes];
     
-    GHAssertTrue(calculatedPrimes.count == 4, nil);
+    GHAssertTrue(calculatedPrimes.count == 3, nil);
     GHAssertEqualObjects(calculatedPrimes, knownPrimes, nil);
 }
 
@@ -77,8 +82,8 @@
     GHAssertFalse([testSubject isPrimeNumber:numberToTest], nil);
 }
 
-- (void)test23IsThe10thPrime {
-    int numberToTest = 23;
+- (void)test29IsThe10thPrime {
+    int numberToTest = 29;
     [testSubject isPrimeNumber:numberToTest];
     
     NSArray *calculatedPrimes = [testSubject allCalculatedPrimes];
@@ -93,8 +98,8 @@
     GHAssertTrue([testSubject highestKnownPrime] == 29, nil);
 }
 
-- (void)test523IsThe100thPrime {
-    int numberToTest = 523;
+- (void)test541IsThe100thPrime {
+    int numberToTest = 541;
     [testSubject isPrimeNumber:numberToTest];
     
     NSArray *calculatedPrimes = [testSubject allCalculatedPrimes];
@@ -103,8 +108,8 @@
     GHAssertTrue([calculatedPrimes.lastObject intValue] == numberToTest, nil);
 }
 
-- (void)test3559IsThe500thPrime {
-    int numberToTest = 3559;
+- (void)test3571IsThe500thPrime {
+    int numberToTest = 3571;
     [testSubject isPrimeNumber:numberToTest];
     
     GHAssertTrue([testSubject numberOfKnownPrimes] == 500, nil);

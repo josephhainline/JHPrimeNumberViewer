@@ -21,8 +21,8 @@
     self = [super init];
     if (self) {
         self.primes = [[NSMutableArray alloc] init];
-        [self.primes addObject:[NSNumber numberWithInt:1]];
         [self.primes addObject:[NSNumber numberWithInt:2]];
+        [self.primes addObject:[NSNumber numberWithInt:3]];
     }
     return self;
 }
@@ -57,8 +57,6 @@
         BOOL divisibleByAnyPrime = NO;
         for (NSNumber *primeNum in self.primes) {
             int primeInt = [primeNum intValue];
-
-            if (primeInt == 1) continue;
 
             if (primeInt > sqrt(candidate)) break; //out of inner loop
 

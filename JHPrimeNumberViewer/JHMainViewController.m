@@ -56,6 +56,7 @@
         cell = [[UITableViewCell alloc] init];
     }
 
+    
     NSNumber *primeNum = [self.primesModel.allCalculatedPrimes objectAtIndex:indexPath.row];
     int primeInt = [primeNum intValue];
     cell.textLabel.text = [NSString stringWithFormat:@"%i", primeInt];
