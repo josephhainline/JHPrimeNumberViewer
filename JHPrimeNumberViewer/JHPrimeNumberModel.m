@@ -49,7 +49,7 @@
     }
 }
 
-- (int)getXthPrimeNumber:(int)xthNumber {
+- (int)xthPrimeNumber:(int)xthNumber {
     int result;
     if (xthNumber < 1) {
         result = 1;

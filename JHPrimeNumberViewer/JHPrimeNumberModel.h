@@ -16,10 +16,12 @@
 - (id)initWithNumberOfPrimesToCalculate:(int)numPrimes;
 
 - (BOOL)isPrimeNumber:(int)number;
-- (int)getXthPrimeNumber:(int)xthNumber;
+- (int)xthPrimeNumber:(int)xthNumber;
+
 - (NSArray *)allCalculatedPrimes;
+- (int)numberOfKnownPrimes;
+
 - (void)calculateNextPrime;
 - (int)highestKnownPrime;
-- (int)numberOfKnownPrimes;
 
 @end

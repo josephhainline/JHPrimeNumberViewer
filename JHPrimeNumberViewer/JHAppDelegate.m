@@ -16,8 +16,6 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     self.model = [[JHPrimeNumberModel alloc] init];
-    [self.model isPrimeNumber:80];
-
     self.mainVC = [[JHMainViewController alloc] initWithModel:self.model];
 
     self.window.rootViewController = self.mainVC;
