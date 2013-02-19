@@ -37,27 +37,27 @@
     return self;
 }
 
-- (BOOL)isPrimeNumber:(int)x {
-    while (x > [self.primes.lastObject intValue]) {
+- (BOOL)isPrime:(int)number {
+    while (number > [self.primes.lastObject intValue]) {
         [self calculateNextPrime];
     }
     
-    if ([self.primes containsObject:[NSNumber numberWithInt:x]]) {
+    if ([self.primes containsObject:[NSNumber numberWithInt:number]]) {
         return YES;
     } else {
         return NO;
     }
 }
 
-- (int)xthPrimeNumber:(int)xthNumber {
+- (int)xthPrime:(int)x {
     int result;
-    if (xthNumber < 1) {
+    if (x < 1) {
         result = 1;
     } else {
-        if (self.numberOfKnownPrimes >= xthNumber) {
-            result = [[self.primes objectAtIndex:xthNumber-1] intValue];
+        if (self.numberOfKnownPrimes >= x) {
+            result = [[self.primes objectAtIndex:x -1] intValue];
         } else {
-            while ([self numberOfKnownPrimes] < xthNumber) {
+            while ([self numberOfKnownPrimes] < x) {
                 [self calculateNextPrime];
             }
             result = self.highestKnownPrime;

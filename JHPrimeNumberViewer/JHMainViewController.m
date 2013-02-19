@@ -30,10 +30,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1000000;
 }
@@ -46,7 +42,7 @@
     }
     
     int x = indexPath.row + 1;
-    int primeInt = [self.primesModel xthPrimeNumber:x];
+    int primeInt = [self.primesModel xthPrime:x];
     cell.textLabel.text = [NSString stringWithFormat:@"%i", primeInt];
     return cell;
 }

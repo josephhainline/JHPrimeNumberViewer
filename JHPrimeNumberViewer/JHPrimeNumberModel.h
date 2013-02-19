@@ -15,13 +15,13 @@
 - (id)init;
 - (id)initWithNumberOfPrimesToCalculate:(int)numPrimes;
 
-- (BOOL)isPrimeNumber:(int)number;
-- (int)xthPrimeNumber:(int)xthNumber;
+- (BOOL)isPrime:(int)number;
+- (int)xthPrime:(int)x;
 
 - (NSArray *)allCalculatedPrimes;
-- (int)numberOfKnownPrimes;
-
-- (void)calculateNextPrime;
 - (int)highestKnownPrime;
+
+- (int)numberOfKnownPrimes;
+- (void)calculateNextPrime;
 
 @end
