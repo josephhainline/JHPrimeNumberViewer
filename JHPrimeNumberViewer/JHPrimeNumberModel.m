@@ -49,6 +49,23 @@
     }
 }
 
+- (int)getXthPrimeNumber:(int)xthNumber {
+    int result;
+    if (xthNumber < 1) {
+        result = 1;
+    } else {
+        if (self.numberOfKnownPrimes >= xthNumber) {
+            result = [[self.primes objectAtIndex:xthNumber-1] intValue];
+        } else {
+            while ([self numberOfKnownPrimes] < xthNumber) {
+                [self calculateNextPrime];
+            }
+            result = self.highestKnownPrime;
+        }
+    }
+    return result;
+}
+
 - (void)calculateNextPrime {
     int lastKnownPrime = [self highestKnownPrime];
     

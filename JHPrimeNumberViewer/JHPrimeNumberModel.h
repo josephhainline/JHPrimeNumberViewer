@@ -16,6 +16,7 @@
 - (id)initWithNumberOfPrimesToCalculate:(int)numPrimes;
 
 - (BOOL)isPrimeNumber:(int)number;
+- (int)getXthPrimeNumber:(int)xthNumber;
 - (NSArray *)allCalculatedPrimes;
 - (void)calculateNextPrime;
 - (int)highestKnownPrime;

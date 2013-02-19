@@ -131,4 +131,39 @@
     GHAssertTrue([testSubject numberOfKnownPrimes] == 15, nil);
 }
 
+- (void)testCanAskFor100thPrime {
+    JHPrimeNumberModel *testSubject = [[JHPrimeNumberModel alloc] initWithNumberOfPrimesToCalculate:15];
+    int hundrethPrime = [testSubject getXthPrimeNumber:100];
+    GHAssertTrue(hundrethPrime == 541, nil);
+}
+
+- (void)testCanAskFor101stPrime {
+    JHPrimeNumberModel *testSubject = [[JHPrimeNumberModel alloc] initWithNumberOfPrimesToCalculate:15];
+    int hundredNFirstPrime = [testSubject getXthPrimeNumber:101];
+    GHAssertTrue(hundredNFirstPrime == 547, nil);
+}
+
+- (void)testCanAskFor0thPrime {
+    JHPrimeNumberModel *testSubject = [[JHPrimeNumberModel alloc] initWithNumberOfPrimesToCalculate:2];
+    int zerothPrime = [testSubject getXthPrimeNumber:0];
+    GHAssertTrue(zerothPrime == 1, nil);
+}
+
+- (void)testCanAskForNegativeFirstPrime {
+    JHPrimeNumberModel *testSubject = [[JHPrimeNumberModel alloc] initWithNumberOfPrimesToCalculate:2];
+    int negOnePrime = [testSubject getXthPrimeNumber:-1];
+    GHAssertTrue(negOnePrime == 1, nil);
+}
+
+- (void)testCanAskFor5thThen4thPrime {
+    JHPrimeNumberModel *testSubject = [[JHPrimeNumberModel alloc] initWithNumberOfPrimesToCalculate:2];
+    int tenthPrime = [testSubject getXthPrimeNumber:10];
+    int fifthPrime = [testSubject getXthPrimeNumber:5];
+    int fourthPrime = [testSubject getXthPrimeNumber:4];
+    GHAssertTrue(tenthPrime == 29, nil);
+    GHAssertTrue(fifthPrime == 11, nil);
+    GHAssertTrue(fourthPrime == 7, nil);
+}
+
+
 @end

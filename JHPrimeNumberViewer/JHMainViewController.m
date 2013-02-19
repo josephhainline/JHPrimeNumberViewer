@@ -26,11 +26,11 @@
         self.view = self.primesTableView;
         self.primesTableView.delegate = self;
         self.primesTableView.dataSource = self;
-
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(addRowToTable)
-                                                     name:JHPrimeNumberModelNewPrimeGenerated
-                                                   object:self.primesModel];
+//
+//        [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                 selector:@selector(addRowToTable)
+//                                                     name:JHPrimeNumberModelNewPrimeGenerated
+//                                                   object:self.primesModel];
     }
     return self;
 }
@@ -38,15 +38,16 @@
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-
-- (void)addRowToTable {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.primesModel.numberOfKnownPrimes-1 inSection:0];
-    NSArray *indexPathArray = [NSArray arrayWithObject:indexPath];
-    [self.primesTableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationNone];
-}
+//
+//- (void)addRowToTable {
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.primesModel.numberOfKnownPrimes-1 inSection:0];
+//    NSArray *indexPathArray = [NSArray arrayWithObject:indexPath];
+//    [self.primesTableView insertRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationNone];
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.primesModel.numberOfKnownPrimes;
+//    return self.primesModel.numberOfKnownPrimes;
+    return 10000;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -57,13 +58,13 @@
     }
 
     
-    NSNumber *primeNum = [self.primesModel.allCalculatedPrimes objectAtIndex:indexPath.row];
-    int primeInt = [primeNum intValue];
+//    NSNumber *primeNum = [self.primesModel.allCalculatedPrimes objectAtIndex:indexPath.row];
+    int primeInt = [self.primesModel getXthPrimeNumber:indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%i", primeInt];
 
-    if (primeInt == self.primesModel.highestKnownPrime) {
-        [self.primesModel calculateNextPrime];
-    }
+//    if (primeInt == self.primesModel.highestKnownPrime) {
+//        [self.primesModel calculateNextPrime];
+//    }
 
     return cell;
 }
