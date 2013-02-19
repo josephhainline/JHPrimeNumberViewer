@@ -1,11 +1,12 @@
 JHPrimeNumberViewer
 ===================
 
-Test Driven Development pairing exercise.  Goal is to create a prime
-number generator, and display the prime numbers in a table view.
+Test Driven Development pairing exercise.  The goal: create a prime
+number generator via TDD and display the prime numbers in a table view.
 
 Project starts with a single model test, and many others commented out.
 Workflow:
+
 1. Make the test pass as simply as you can.
 2. Refactor code (if desired).
 3. Uncomment the next test.
@@ -13,7 +14,7 @@ Workflow:
 5. If time remains, make a table view to visualize your prime numbers.
 
 Answer for the model are checked in on the branch
-'answer_no_visualization'.
+*answer_no_visualization*.
 
-Answer for everything is checked in on the branch 'answer'.
+Answer for everything is checked in on the branch *answer*.
 
