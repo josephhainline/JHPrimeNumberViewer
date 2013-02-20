@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Joseph Hainline. All rights reserved.
 //
 
+#define CellReuseIdentifier @"JHPrimesTableViewCell"
+
 #import "JHMainViewController.h"
 
 @interface JHMainViewController ()
@@ -35,14 +37,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JHPrimesTableViewCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellReuseIdentifier];
 
     if (!cell) {
-        cell = [[UITableViewCell alloc] init];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellReuseIdentifier];
     }
     
-    int x = indexPath.row + 1;
-    int primeInt = [self.primesModel xthPrime:x];
+    int n = indexPath.row + 1;
+    int primeInt = [self.primesModel nthPrime:n];
     cell.textLabel.text = [NSString stringWithFormat:@"%i", primeInt];
     return cell;
 }

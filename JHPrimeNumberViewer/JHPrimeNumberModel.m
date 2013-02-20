@@ -49,15 +49,15 @@
     }
 }
 
-- (int)xthPrime:(int)x {
+- (int)nthPrime:(int)n {
     int result;
-    if (x < 1) {
+    if (n < 1) {
         result = 1;
     } else {
-        if (self.numberOfKnownPrimes >= x) {
-            result = [[self.primes objectAtIndex:x -1] intValue];
+        if (self.numberOfKnownPrimes >= n) {
+            result = [[self.primes objectAtIndex:n -1] intValue];
         } else {
-            while ([self numberOfKnownPrimes] < x) {
+            while ([self numberOfKnownPrimes] < n) {
                 [self calculateNextPrime];
             }
             result = self.highestKnownPrime;
@@ -86,7 +86,6 @@
             found = YES;
         }
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:JHPrimeNumberModelNewPrimeGenerated object:self];
 }
 
 - (int)highestKnownPrime {
