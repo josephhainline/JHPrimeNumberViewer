@@ -1,11 +1,3 @@
-//
-//  JHPrimeNumberModel.m
-//  JHPrimeNumberViewer
-//
-//  Created by Joseph Hainline on 1/7/13.
-//  Copyright (c) 2013 Joseph Hainline. All rights reserved.
-//
-
 #import "JHPrimeNumberModel.h"
 
 @interface JHPrimeNumberModel ()
@@ -21,8 +13,7 @@
     self = [super init];
     if (self) {
         self.primes = [[NSMutableArray alloc] init];
-        [self.primes addObject:[NSNumber numberWithInt:2]];
-        [self.primes addObject:[NSNumber numberWithInt:3]];
+        [self.primes addObject:@2];
     }
     return self;
 }
@@ -52,7 +43,7 @@
 - (int)nthPrime:(int)n {
     int result;
     if (n < 1) {
-        result = 1;
+        result = -1;
     } else {
         if (self.numberOfKnownPrimes >= n) {
             result = [[self.primes objectAtIndex:n -1] intValue];
@@ -75,6 +66,7 @@
         for (NSNumber *primeNum in self.primes) {
             int primeInt = [primeNum intValue];
 
+            //optimization
             if (primeInt > sqrt(candidate)) break; //out of inner loop
 
             if (candidate % primeInt == 0) {

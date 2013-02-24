@@ -1,16 +1,8 @@
-//
-//  JHMainViewController.m
-//  JHPrimeNumberViewer
-//
-//  Created by Joseph Hainline on 1/8/13.
-//  Copyright (c) 2013 Joseph Hainline. All rights reserved.
-//
-
 #define CellReuseIdentifier @"JHPrimesTableViewCell"
 
 #import "JHMainViewController.h"
 
-@interface JHMainViewController ()
+@interface JHMainViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, strong) JHPrimeNumberModel *primesModel;
 @property(nonatomic, strong) UITableView *primesTableView;
@@ -45,8 +37,28 @@
     
     int n = indexPath.row + 1;
     int primeInt = [self.primesModel nthPrime:n];
-    cell.textLabel.text = [NSString stringWithFormat:@"%i", primeInt];
+    cell.textLabel.text = [NSString stringWithFormat:@"%i     is the %i%@ prime", primeInt, n, [self printableEndingFromInt:n]];
     return cell;
+}
+
+- (NSString *)printableEndingFromInt:(int)x {
+    switch (x) {
+        case 1:
+            return @"st";
+            break;
+
+        case 2:
+            return @"nd";
+            break;
+
+        case 3:
+            return @"rd";
+            break;
+    
+        default:
+            return @"th";
+            break;
+    }
 }
 
 @end

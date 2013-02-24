@@ -1,11 +1,3 @@
-//
-//  JHPrimeNumberModelTests.m
-//  JHPrimeNumberViewer
-//
-//  Created by Joseph Hainline on 1/7/13.
-//  Copyright (c) 2013 Joseph Hainline. All rights reserved.
-//
-
 #import <GHUnitIOS/GHUnit.h>
 #import "JHPrimeNumberModel.h"
 #import "OCMock.h"
@@ -24,56 +16,50 @@
 }
 
 - (void)testOneIsNotPrime {
-    int numberToTest = 1;
-    GHAssertFalse([self.testSubject isPrime:numberToTest], nil);
+    GHAssertFalse([self.testSubject isPrime:1], nil);
 }
 
 - (void)testTwoIsPrime {
-    int numberToTest = 2;
-    GHAssertTrue([self.testSubject isPrime:numberToTest], nil);
+    GHAssertTrue([self.testSubject isPrime:2], nil);
 }
 
 - (void)testThreeIsPrime {
-    int numberToTest = 3;
-    GHAssertTrue([self.testSubject isPrime:numberToTest], nil);
+    GHAssertTrue([self.testSubject isPrime:3], nil);
+}
+
+- (void)testFourIsNotPrime {
+    GHAssertFalse([self.testSubject isPrime:4], nil);
+}
+
+- (void)testFiveIsPrime {
+    GHAssertTrue([self.testSubject isPrime:5], nil);
 }
 
 - (void)testKnownPrimesAreAccessible {
-    NSArray *knownPrimes = @[@2, @3];
-
-    NSArray *calculatedPrimes = [self.testSubject allCalculatedPrimes];
-
-    GHAssertTrue(calculatedPrimes.count == 2, nil);
-    GHAssertEqualObjects(calculatedPrimes, knownPrimes, nil);
-}
-
-- (void)testCanCalculateFiveIsPrime {
     NSArray *knownPrimes = @[@2, @3, @5];
-    
-    [self.testSubject calculateNextPrime];
+
+    [self.testSubject isPrime:1];
+    [self.testSubject isPrime:2];
+    [self.testSubject isPrime:3];
+    [self.testSubject isPrime:4];
+    [self.testSubject isPrime:5];
     NSArray *calculatedPrimes = [self.testSubject allCalculatedPrimes];
-    
+
     GHAssertTrue(calculatedPrimes.count == 3, nil);
     GHAssertEqualObjects(calculatedPrimes, knownPrimes, nil);
-}
-
-- (void)test4IsNotPrime {
-    int numberToTest = 4;
-    GHAssertFalse([self.testSubject isPrime:numberToTest], nil);
 }
 
 - (void)test7IsPrime {
-    int numberToTest = 7;
-    GHAssertTrue([self.testSubject isPrime:numberToTest], nil);
+    GHAssertTrue([self.testSubject isPrime:7], nil);
 }
 
-- (void)testPreviouslyCalculatedPrimesAreAccessible {
-    NSArray *knownPrimes = @[@2, @3, @5];
-    [self.testSubject isPrime:5];
+- (void)testKnownPrimesHasNoGaps {
+    NSArray *knownPrimes = @[@2, @3, @5, @7, @11];
     
+    [self.testSubject isPrime:11];
     NSArray *calculatedPrimes = [self.testSubject allCalculatedPrimes];
     
-    GHAssertTrue(calculatedPrimes.count == 3, nil);
+    GHAssertTrue(calculatedPrimes.count == 5, nil);
     GHAssertEqualObjects(calculatedPrimes, knownPrimes, nil);
 }
 
@@ -136,13 +122,13 @@
 - (void)testCanAskFor0thPrime {
     JHPrimeNumberModel *testSubject = [[JHPrimeNumberModel alloc] initWithNumberOfPrimesToCalculate:2];
     int zerothPrime = [testSubject nthPrime:0];
-    GHAssertTrue(zerothPrime == 1, nil);
+    GHAssertTrue(zerothPrime == -1, nil);
 }
 
 - (void)testCanAskForNegativeFirstPrime {
     JHPrimeNumberModel *testSubject = [[JHPrimeNumberModel alloc] initWithNumberOfPrimesToCalculate:2];
     int negOnePrime = [testSubject nthPrime:-1];
-    GHAssertTrue(negOnePrime == 1, nil);
+    GHAssertTrue(negOnePrime == -1, nil);
 }
 
 - (void)testCanAskFor10thThen5thThen4thPrime {
